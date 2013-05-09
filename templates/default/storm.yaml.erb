@@ -1,0 +1,13 @@
+# Storm Configuraton
+# Written by Chef :: Do not modify
+#
+storm.zookeeper.servers:
+<%- @zookeeper_ips.each do |ip| -%>
+    - <%= ip %>
+<%- end -%>
+storm.local.dir: <%= node[:storm][:data_dir] %>
+nimbus.host: <%= @nimbus_ip %>
+supervisor.slots.ports:
+<%- @supervisor_ports.each do |port| -%>
+    - <%= port %>
+<%- end -%>

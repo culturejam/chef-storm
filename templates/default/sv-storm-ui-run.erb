@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec chpst -u<%= @options[:user] %> -e /etc/sv/storm-ui/env   \
+  <%= @options[:home_dir] %>/bin/storm ui

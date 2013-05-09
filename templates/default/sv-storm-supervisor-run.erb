@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec chpst -u<%= @options[:user] %> -e /etc/sv/storm-supervisor/env -o 65535       \
+  <%= @options[:home_dir] %>/bin/storm supervisor
